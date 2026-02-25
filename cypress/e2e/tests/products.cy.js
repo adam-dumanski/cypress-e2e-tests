@@ -11,7 +11,7 @@ describe('Products & Cart tests' , () => {
     
 
     it('Test 1: "Powinien wyświetlić 6 produktów"' , () => {
-        productsPage.getProductCount(6)
+        productsPage.productsList.should('have.length' , 6)
     })
     it('Test 2: "Powinien dodać produkt do koszyka"' , () => {
         productsPage.addFirstProductToCart()
