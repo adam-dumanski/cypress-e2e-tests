@@ -22,9 +22,6 @@ class ProductsPage {
     goToCart() {
         this.cartLink.click()
     }
-    getProductCount() {
-        this.productsList.its('length')
-    }
 
     //asercje
     checkCartBadge(value) {
