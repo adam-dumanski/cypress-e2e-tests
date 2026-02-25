@@ -11,7 +11,7 @@ describe('Products & Cart tests' , () => {
 
 
     it('Test 1: "Powinien wyświetlić 6 produktów"' , () => {
-        ProductsPage.getProductCount.should('have.length' , 6)
+        ProductsPage.getProductCount(6)
 
     })
 
