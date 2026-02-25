@@ -1,4 +1,4 @@
-import loginPage from '../../support/pages/LoginPage'
+import loginPage from '../../support/pages/loginPage'
 
 describe('Login Tests' , () => {
     beforeEach(() => {
