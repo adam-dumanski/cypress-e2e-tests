@@ -72,7 +72,7 @@ sauce-demo-tests/
 
 ## 👤 Author
 
-[Adam Dumański]
+Adam Dumański
 
 ## 📝 License
 
