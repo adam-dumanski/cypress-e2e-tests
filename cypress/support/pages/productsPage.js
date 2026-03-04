@@ -15,12 +15,28 @@ class ProductsPage {
     get cartLink() {
         return cy.get('[data-test="shopping-cart-link"]')
     }
+    get sortDropdown() {
+        return cy.get('[data-test="product-sort-container"]')
+    }
+
+
     // Akcje/metody
     addFirstProductToCart() {
         this.firstProductAddButton.click()
     }
     goToCart() {
         this.cartLink.click()
+    }
+
+    sortBY(option){
+        // option: 'az', 'za', 'lohi', 'hilo'
+        this.sortDropdown.select(option)
+    }
+    getProductNames() {
+        return cy.get('[data-test="inventory-item-name"]')
+        .then($elements => {
+            return[... $elements].map(el => el.innerText)
+        })
     }
 
     //asercje
