@@ -38,6 +38,11 @@ class ProductsPage {
             return[... $elements].map(el => el.innerText)
         })
     }
+    addProductToCart(productName){
+        cy.contains('[data-test="inventory-item"]', productName)
+        .find('button')
+        .click()
+    }
 
     //asercje
     checkCartBadge(value) {
