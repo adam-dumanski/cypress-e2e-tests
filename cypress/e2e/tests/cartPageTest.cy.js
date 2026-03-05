@@ -28,6 +28,34 @@ describe('Cart Test' , () => {
 
         cy.url().should('contain' , '/inventory')
     })
+    it('Test 5: "Powinien dodać 3 produkty do koszyka"' , () => {
+        cartPage.removeButton.click()
+        cartPage.continueShopping()
+        productsPage.addProductToCart('Sauce Labs Backpack')
+        productsPage.addProductToCart('Sauce Labs Bike Light')
+        productsPage.addProductToCart('Sauce Labs Bolt T-Shirt')
 
+        cy.get('[data-test="shopping-cart-badge"]').should('contain' , '3')
+        productsPage.goToCart()
+        cartPage.cartItems.should('have.length' , 3)
+        })
+    it('Test 6: "Powinien dodać wszystkie 6 produktów"' , () => {
+        cartPage.removeButton.click()
+        cartPage.continueShopping()
 
+        const products = [        
+        'Sauce Labs Backpack',
+        'Sauce Labs Bike Light',
+        'Sauce Labs Bolt T-Shirt',
+        'Sauce Labs Fleece Jacket',
+        'Sauce Labs Onesie',
+        'Test.allTheThings() T-Shirt (Red)'
+        ]
+        for (let i = 0 ; i < products.length; i++){
+            productsPage.addProductToCart(products[i])
+        }
+        cy.get('[data-test="shopping-cart-badge"]').should('contain' , 6)
+        productsPage.goToCart()
+        cartPage.cartItems.should('have.length' , 6)
+    })
 })
