@@ -18,6 +18,9 @@ class ProductsPage {
     get sortDropdown() {
         return cy.get('[data-test="product-sort-container"]')
     }
+    get removeButton() {
+        return cy.get('.btn_secondary').contains('Remove').first()
+    }
 
 
     // Akcje/metody

@@ -35,7 +35,8 @@ describe('Cart Test' , () => {
         productsPage.addProductToCart('Sauce Labs Bike Light')
         productsPage.addProductToCart('Sauce Labs Bolt T-Shirt')
 
-        cy.get('[data-test="shopping-cart-badge"]').should('contain' , '3')
+        //cy.get('[data-test="shopping-cart-badge"]').should('contain' , '3')
+        productsPage.cartBadge.should('contain' , '3')
         productsPage.goToCart()
         cartPage.cartItems.should('have.length' , 3)
         })
@@ -54,7 +55,8 @@ describe('Cart Test' , () => {
         for (let i = 0 ; i < products.length; i++){
             productsPage.addProductToCart(products[i])
         }
-        cy.get('[data-test="shopping-cart-badge"]').should('contain' , 6)
+        //cy.get('[data-test="shopping-cart-badge"]').should('contain' , 6)
+        productsPage.cartBadge.should('contain' , '6')
         productsPage.goToCart()
         cartPage.cartItems.should('have.length' , 6)
     })
