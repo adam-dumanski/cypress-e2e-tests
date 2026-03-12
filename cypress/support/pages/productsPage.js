@@ -21,6 +21,9 @@ class ProductsPage {
     get removeButton() {
         return cy.get('.btn_secondary').contains('Remove').first()
     }
+    get removeButtonProductsPage(){
+        return cy.get('button').contains('Remove').first()
+    }
 
 
     // Akcje/metody
@@ -45,6 +48,9 @@ class ProductsPage {
         cy.contains('[data-test="inventory-item"]', productName)
         .find('button')
         .click()
+    }
+    removeFirstProductFromProductsPage() {
+        this.removeButtonProductsPage.click()
     }
 
     //asercje

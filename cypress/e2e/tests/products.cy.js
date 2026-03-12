@@ -24,5 +24,12 @@ describe('Products & Cart tests' , () => {
         
         cy.url().should('contain' , '/cart')
     })
+    it('Test 4: "Powinien usunąć produkt z poziomu strony produktów"', () => {
+        productsPage.addFirstProductToCart()
+        productsPage.checkCartBadge(1)
+        productsPage.removeFirstProductFromProductsPage()
+        productsPage.cartBadge.should('not.exist')
+
+    })
 
 })
