@@ -24,6 +24,9 @@ class ProductsPage {
     get removeButtonProductsPage(){
         return cy.get('button').contains('Remove').first()
     }
+    get addButton() {
+        return cy.get('button'). contains('Add to cart')
+    }
 
 
     // Akcje/metody
