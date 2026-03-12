@@ -2,12 +2,18 @@
 
 Automated E2E tests for https://www.saucedemo.com using Cypress and Page Object Model.
 
+# 🧪 Sauce Demo - Automated Tests
+
+![Cypress Tests](https://github.com/adam-dumanski/cypress-e2e-tests/actions/workflows/cypress.yml/badge.svg)
+
 ## 🚀 Features
 
-- ✅ Page Object Model architecture
-- ✅ 13 E2E test scenarios
+- ✅ Page Object Model architecture (4 page objects)
+- ✅ **27 E2E test scenarios**
 - ✅ Best practices (data-test selectors)
-- ✅ Login, Products, Cart, Checkout flows
+- ✅ Login, Products, Cart, Checkout, Sorting
+- ✅ Multiple user types (standard, problem, locked_out)
+- ✅ Bug detection tests
 
 ## 📦 Installation
 ```bash
@@ -27,50 +33,34 @@ npx cypress run
 ```
 sauce-demo-tests/
 ├── cypress/
-│   ├── e2e/
-│   │   └── tests/
-│   │       ├── login.cy.js        (3 tests)
-│   │       ├── products.cy.js     (3 tests)
-│   │       ├── cart.cy.js         (4 tests)
-│   │       └── checkout.cy.js     (3 tests)
-│   └── support/
-│       └── pages/
-│           ├── LoginPage.js
-│           ├── ProductsPage.js
-│           ├── CartPage.js
-│           └── CheckoutPage.js
+│   ├── e2e/tests/
+│   │   ├── login.cy.js         (4 tests)
+│   │   ├── products.cy.js      (4 tests)
+│   │   ├── cart.cy.js          (6 tests)
+│   │   ├── checkout.cy.js      (3 tests)
+│   │   ├── sorting.cy.js       (7 tests)
+│   │   ├── problem-user.cy.js  (2 tests)
+│   │   └── e2e-full-flow.cy.js (1 test)
+│   └── support/pages/
+│       ├── LoginPage.js
+│       ├── ProductsPage.js
+│       ├── CartPage.js
+│       └── CheckoutPage.js
 ```
 
-## 🧪 Test Scenarios
+## 🧪 Test Coverage
 
-### Login Tests
-- ✅ Successful login
-- ✅ Invalid password error
-- ✅ Empty fields error
+| Area | Tests | Description |
+|------|-------|-------------|
+| Login | 4 | Valid/invalid credentials, locked user |
+| Products | 4 | Display, add to cart, remove |
+| Cart | 6 | Add/remove items, multiple products |
+| Checkout | 3 | Form validation, complete order |
+| Sorting | 7 | A-Z, Z-A, Price Low-High, High-Low |
+| Problem User | 2 | Bug detection |
+| E2E Flow | 1 | Complete purchase journey |
 
-### Products Tests
-- ✅ Display 6 products
-- ✅ Add product to cart
-- ✅ Navigate to cart
-
-### Cart Tests
-- ✅ Show added product
-- ✅ Remove product from cart
-- ✅ Proceed to checkout
-- ✅ Continue shopping
-
-### Checkout Tests
-- ✅ Empty form validation
-- ✅ Fill form and proceed
-- ✅ Complete order (E2E flow)
-
-## 🛠️ Tech Stack
-
-- **Cypress** - E2E testing framework
-- **JavaScript** - Programming language
-- **Page Object Model** - Design pattern
-
-## 👤 Author
+**Total: 27 tests**
 
 Adam Dumański
 
